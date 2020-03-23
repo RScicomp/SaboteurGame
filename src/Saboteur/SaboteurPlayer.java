@@ -10,8 +10,8 @@ import boardgame.Player;
  */
 public abstract class SaboteurPlayer extends Player {
     public SaboteurPlayer(String name) { super(name); }
-    public SaboteurPlayer() { super("Player"); }
-
+    public SaboteurPlayer() { super("260729805"); }
+// At start evaluate shortest path with given cards.
     @Override
     final public Board createBoard() { return new SaboteurBoard(); }
 

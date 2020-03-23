@@ -349,6 +349,13 @@ public class SaboteurBoardState extends BoardState {
     @Override
     public SaboteurMove getRandomMove() {
         ArrayList<SaboteurMove> moves = getAllLegalMoves();
+        System.out.println(moves);
+        return moves.get(rand.nextInt(moves.size()));
+    }
+    public SaboteurMove getBestMove() {
+        ArrayList<SaboteurMove> moves = getAllLegalMoves();
+        System.out.println(moves);
+
         return moves.get(rand.nextInt(moves.size()));
     }
 
@@ -836,7 +843,7 @@ public class SaboteurBoardState extends BoardState {
 
                 if (cardPath(originTargets, targetPos, true)) { //checks that there is a cardPath
                     System.out.println("card path found"); //todo remove
-                    this.printBoard();
+                    //this.printBoard();
                     //next: checks that there is a path of ones.
                     ArrayList<int[]> originTargets2 = new ArrayList<>();
                     //the starting points
@@ -902,7 +909,12 @@ public class SaboteurBoardState extends BoardState {
         StringBuilder boardString = new StringBuilder();
         for (int i = 0; i < BOARD_SIZE*3; i++) {
             for (int j = 0; j < BOARD_SIZE*3; j++) {
-                boardString.append(intBoard[i][j]);
+                if(intBoard[i][j] >= 0){
+                    boardString.append(" " + intBoard[i][j]);
+                }
+                else {
+                    boardString.append(intBoard[i][j]);
+                }
                 boardString.append(",");
             }
             boardString.append("\n");
