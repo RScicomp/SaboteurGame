@@ -349,7 +349,7 @@ public class SaboteurBoardState extends BoardState {
     @Override
     public SaboteurMove getRandomMove() {
         ArrayList<SaboteurMove> moves = getAllLegalMoves();
-        System.out.println(moves);
+        //System.out.println(moves);
         return moves.get(rand.nextInt(moves.size()));
     }
     public SaboteurMove getBestMove() {
@@ -793,7 +793,7 @@ public class SaboteurBoardState extends BoardState {
             visited.add(visitingPos);
             if(usingCard) addUnvisitedNeighborToQueue(visitingPos,queue,visited,BOARD_SIZE,usingCard);
             else addUnvisitedNeighborToQueue(visitingPos,queue,visited,BOARD_SIZE*3,usingCard);
-            System.out.println(queue.size());
+            //System.out.println(queue.size());
         }
         return false;
     }
